@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Combat</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        #click-button {
+            padding: 20px;
+            font-size: 24px;
+            margin-top: 50px;
+        }
+        #score {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hamster Combat</h1>
+    <button id="click-button">Click Me!</button>
+    <p id="score">Clicks: 0</p>
+
+    <script>
+        let score = 0;
+        const clickButton = document.getElementById('click-button');
+        const scoreDisplay = document.getElementById('score');
+
+        clickButton.addEventListener('click', () => {
+            score += 1;
+            scoreDisplay.textContent = `Clicks: ${score}`;
+            if (score >= 100) {
+                alert('You won! 100 clicks reached!');
+                score = 0; // Сброс счета
+            }
+        });
+    </script>
+</body>
+</html>
